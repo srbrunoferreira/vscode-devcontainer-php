@@ -1,0 +1,14 @@
+# yhttps://phpstan.org/config-reference
+parameters:
+    # phpVersion: 70400
+    phpVersion: 80131
+    level: max
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - *.php
+    parallel:
+        maximumNumberOfProcesses: 2
+    scanDirectories:
+        - /home/www-data/wordpress-stubs/
+    excludePaths:
+        - /home/www-data/wordpress-stubs/wordpress/wp-admin/includes/noop.php

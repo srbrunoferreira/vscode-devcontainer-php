@@ -1,0 +1,82 @@
+{
+    "name": "Tailored WordPress DevContainer",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "postCreateCommand": "composer install",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "valeryanm.vscode-phpsab",
+                "bmewburn.vscode-intelephense-client",
+                "neilbrayfield.php-docblocker",
+                "dbaeumer.vscode-eslint",
+                "MehediDracula.php-namespace-resolver",
+                "satiromarra.code-sftp",
+                "ctf0.php-array-symbols",
+                "christian-kohler.path-intellisense",
+                "esbenp.prettier-vscode",
+                "xdebug.php-debug",
+                "SanderRonde.phpstan-vscode"
+            ],
+            "settings": {
+                "intelephense.environment.includePaths": [
+                    "/home/www-data/wordpress-stubs"
+                ],
+                "[html]": {
+                    "editor.rulers": [
+                        120
+                    ],
+                    "editor.tabSize": 4
+                },
+                "[javascript]": {
+                    "editor.rulers": [
+                        80,
+                        120
+                    ]
+                },
+                "[php]": {
+                    "editor.defaultFormatter": "valeryanm.vscode-phpsab",
+                    "editor.rulers": [
+                        80,
+                        120
+                    ]
+                },
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": "explicit"
+                },
+                "editor.formatOnSave": true,
+                "files.encoding": "utf8",
+                "files.eol": "\n",
+                "html.format.wrapAttributes": "force-expand-multiline",
+                "html.format.wrapAttributesIndentSize": 4,
+                "html.format.wrapLineLength": 120,
+                "intelephense.environment.phpVersion": "8.1",
+                "intelephense.files.associations": [
+                    "*.php"
+                ],
+                "namespaceResolver.showMessageOnStatusBar": true,
+                "namespaceResolver.sortAlphabetically": true,
+                "namespaceResolver.sortNatural": true,
+                "namespaceResolver.sortOnSave": true,
+                "php-docblocker.alignParams": true,
+                "php-docblocker.alignReturn": true,
+                "php-docblocker.useShortNames": true,
+                "php.suggest.basic": false,
+                "php.validate.enable": false,
+                "phpsab.executablePathCBF": "vendor/bin/phpcbf",
+                "phpsab.executablePathCS": "vendor/bin/phpcs",
+                "phpsab.standard": "phpcs.xml.dist",
+                "phpsab.fixerEnable": true,
+                "phpsab.snifferMode": "onSave",
+                "phpstan.binPath": "./vendor/bin/phpstan",
+                "phpstan.enabled": true,
+                "phpstan.showProgress": true,
+                "phpstan.singleFileMode": true,
+                "phpstan.configFile": "phpstan.neon.dist",
+                "php.debug.executablePath": "/usr/local/bin/php",
+                "php.validate.executablePath": "/usr/local/bin/php"
+            }
+        }
+    }
+}
