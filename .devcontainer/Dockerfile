@@ -4,23 +4,10 @@
 
 FROM php:8.1.32-zts-alpine3.21
 
-RUN apk update && apk upgrade && \
-  apk add --no-cache \
+RUN apk add --no-cache \
   git \
-  composer \
-  npm \
-  libxml2-dev \
-  libpng-dev \
-  linux-headers \
-  php-tokenizer \
-  php-xmlreader \
-  php-simplexml \
-  php-xmlwriter && \
-  docker-php-ext-install xml gd && \
-  apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && \
-  pecl install xdebug && \
-  docker-php-ext-enable xdebug && \
-  apk del .build-deps
+  npm && \
+  curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Download WordPress files to use as stubs.
 
